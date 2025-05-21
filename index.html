@@ -60,6 +60,32 @@
     .section-padding {
       padding: 60px 0;
     }
+    .hover-zoom {
+      transition: transform 0.3s ease;
+    }
+    .hover-zoom:hover {
+      transform: scale(1.03);
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(var(--bs-primary-rgb), 0.7);
+    }
+    .carousel-indicators [data-bs-target] {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: 0 6px;
+    }
+    .card {
+      border: none;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+    .card-header {
+      border-radius: 0.5rem 0.5rem 0 0 !important;
+    }
   </style>
 </head>
 <body>
@@ -102,111 +128,197 @@
   </section>
 
   <!-- Products Section -->
- <section class="container my-5">
-  <h2 class="text-center mb-4">Gauri Basmati Rice Collection</h2>
-
-  <div id="riceCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/27.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI MINI TIBAR BASMATI RICE</p></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/28.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI DUBAR BASMATI RICE</p></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/29.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI MOGRA BASMATI RICE</p></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/30.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI MINI MOGRA BASMATI RICE</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/13.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI DELIGHT BASMATI RICE OLD</p></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/14.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI TIBAR BASMATI RICE</p></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/14-10-2021 GAURI 02 FRONT 25KG.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI PREMIUM BASMATI RICE</p></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/15.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI ROZANA BASMATI RICE</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/22.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI DELIGHT BASMATI RICE</p></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/23.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI MINI DUBAR BASMATI RICE</p></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/GAURI PREMIUM BASMATI RICE OLD.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI PREMIUM BASMATI RICE OLD</p></div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card text-center">
-              <img src="./images/26.png" class="card-img-top" alt="">
-              <div class="card-body"><p class="card-text">GAURI SPECIAL BASMATI RICE</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+ <section class="container-fluid section-padding" style="background: linear-gradient(to right, #f8f9fa, #e9ecef);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-4 fw-bold text-primary">Gauri Basmati Rice Collection</h2>
+      <p class="lead text-muted">Discover our premium selection of finest basmati rice varieties</p>
     </div>
 
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#riceCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#riceCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+    <div id="riceCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4">
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/27.png" class="card-img-top p-3" alt="GAURI MINI TIBAR BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">MINI TIBAR</h5>
+                  <p class="card-text">GAURI MINI TIBAR BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/28.png" class="card-img-top p-3" alt="GAURI DUBAR BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">DUBAR</h5>
+                  <p class="card-text">GAURI DUBAR BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/29.png" class="card-img-top p-3" alt="GAURI MOGRA BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">MOGRA</h5>
+                  <p class="card-text">GAURI MOGRA BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/30.png" class="card-img-top p-3" alt="GAURI MINI MOGRA BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">MINI MOGRA</h5>
+                  <p class="card-text">GAURI MINI MOGRA BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/13.png" class="card-img-top p-3" alt="GAURI DELIGHT BASMATI RICE OLD">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">DELIGHT OLD</h5>
+                  <p class="card-text">GAURI DELIGHT BASMATI RICE OLD</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/14.png" class="card-img-top p-3" alt="GAURI TIBAR BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">TIBAR</h5>
+                  <p class="card-text">GAURI TIBAR BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/14-10-2021 GAURI 02 FRONT 25KG.png" class="card-img-top p-3" alt="GAURI PREMIUM BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">PREMIUM</h5>
+                  <p class="card-text">GAURI PREMIUM BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/15.png" class="card-img-top p-3" alt="GAURI ROZANA BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">ROZANA</h5>
+                  <p class="card-text">GAURI ROZANA BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row g-4">
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/22.png" class="card-img-top p-3" alt="GAURI DELIGHT BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">DELIGHT</h5>
+                  <p class="card-text">GAURI DELIGHT BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/23.png" class="card-img-top p-3" alt="GAURI MINI DUBAR BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">MINI DUBAR</h5>
+                  <p class="card-text">GAURI MINI DUBAR BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/GAURI PREMIUM BASMATI RICE OLD.png" class="card-img-top p-3" alt="GAURI PREMIUM BASMATI RICE OLD">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">PREMIUM OLD</h5>
+                  <p class="card-text">GAURI PREMIUM BASMATI RICE OLD</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card h-100 shadow-sm hover-zoom">
+                <div class="card-header bg-primary text-white text-center py-3">
+                  Premium Quality
+                </div>
+                <img src="./images/26.png" class="card-img-top p-3" alt="GAURI SPECIAL BASMATI RICE">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">SPECIAL</h5>
+                  <p class="card-text">GAURI SPECIAL BASMATI RICE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#riceCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-primary rounded-circle p-3"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#riceCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-primary rounded-circle p-3"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators position-relative mt-4">
+        <button type="button" data-bs-target="#riceCarousel" data-bs-slide-to="0" class="active bg-primary" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#riceCarousel" data-bs-slide-to="1" class="bg-primary" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#riceCarousel" data-bs-slide-to="2" class="bg-primary" aria-label="Slide 3"></button>
+      </div>
+    </div>
   </div>
 </section>
 
